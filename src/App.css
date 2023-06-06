@@ -1,38 +1,209 @@
-.App {
-  text-align: center;
+body {
+  background: #30384b;
+  color: #eee;
+  margin: 1rem;
+  font-family: 'Poppins', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  padding-top: 1rem;
+  max-width: 300px;
+  margin: 0 auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav {
+  background-color: rgba(0, 0, 0, 0.3);
+  margin: 0 auto;
+  padding: 1rem 1rem;
+  display: flex;
+  gap: 1rem;
+  border-radius: 3rem;
+  backdrop-filter: blur(15px);
+  transition: all 2s ease;
+  margin-top: 1rem;
+  max-width: 250px;
+  justify-content: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav:hover {
+  background: #ffcc00;
+}
+
+.btn {
+  color: white;
+  display: flex;
+  padding: 1rem 1rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 2s ease;
+  background: transparent;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn:hover {
+  background: #009b4d;
+  border-color: transparent;
+  transform: rotate(2turn);
+}
+
+.cog-button,
+.pomodoro-button,
+.pause-button,
+.back-button,
+.save-button {
+  color: white;
+  display: flex;
+  padding: 1rem 1rem;
+  cursor: pointer;
+  transition: all 2s ease;
+  background: transparent;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+.pomodoro-button:hover {
+  color: #f54e4e; 
+}
+
+.popup-container-full {
+  position: fixed;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  max-height: calc(100vh - 2rem);
+}
+
+.popup-container {
+  padding: 0.5rem 0.5rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  border-radius: 3rem;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.popup-content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0.5rem;
+}
+
+.popup-content > h3 {
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+.btn,
+.cog-button,
+.pomodoro-button,
+.pause-button,
+.back-button,
+.save-button {
+  margin-bottom: 0;
+}
+
+.popup {
+  background-color: rgba(0, 0, 0, 0.3);
+  margin: 0 auto;
+  padding: 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 3rem;
+  backdrop-filter: blur(15px);
+  transition: all 2s ease;
+  margin-top: 1rem;
+  max-width: 250px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.popup-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popup-input > input {
+  align-self: center;
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid gray;
+  outline: 0;
+  font-size: 1rem;
   color: white;
+  padding: 7px 0;
+  background: transparent;
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+.popup-input > button {
+  margin: 1rem;
+  align-self: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.popup-message > p {
+  margin: 0 auto;
+}
+
+.input-button {
+  color: white;
+  display: flex;
+  padding: 1rem 1rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 2s ease;
+  background: transparent;
+  justify-content: center;
+  align-items: center;
+}
+
+.save-input-button {
+  color: white;
+  display: flex;
+  padding: 1rem 1rem;
+  cursor: pointer;
+  transition: all 2s ease;
+  background: transparent;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.input-button:hover {
+  background: #009b4d;
+  border-color: transparent;
+  transform: rotate(2turn);
+}
+
+/* == Media Queries (Medium Devices) == */
+@media screen and (max-width: 1024px) {
+  .container {
+    width: 50%;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .nav {
+    width: 50%;
   }
 }
+
+/* == Media Queries (Small Devices) == */
+@media screen and (max-width: 600px) {
+  .container {
+    max-width: 480px;
+  }
+}
+
