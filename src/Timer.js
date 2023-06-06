@@ -78,6 +78,7 @@ function Timer() {
     console.log("Interval created");
 
     return () => clearInterval(interval);
+    // eslint-disable-next-line
   }, [settingsInfo]);
 
   useEffect(() => {
