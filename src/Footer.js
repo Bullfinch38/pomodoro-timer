@@ -43,10 +43,15 @@ const Footer = () => {
         <a
           href="https://www.linkedin.com/in/konstantin-snigirev-4a197410b/"
           target="_blank"
+          rel="noreferrer"
         >
           <BsLinkedin />
         </a>
-        <a href="https://github.com/Bullfinch38" target="_blank">
+        <a
+          href="https://github.com/Bullfinch38"
+          target="_blank"
+          rel="noreferrer"
+        >
           <AiFillGithub />
         </a>
       </div>
