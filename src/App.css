@@ -219,3 +219,10 @@ body {
   font-size: 20px;
   color: #eee;
 }
+
+/* == Media Queries (Small Devices) == */
+@media screen and (max-width: 600px) {
+  .popup-container-full {
+    width: 100%;
+  }
+}
