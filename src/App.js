@@ -9,18 +9,16 @@ const App = () => {
   const [breakMinutes, setBreakMinutes] = useState(10);
 
   return (
-    <main>
-      <SettingsContext.Provider
-        value={{
-          workMinutes,
-          breakMinutes,
-          setWorkMinutes,
-          setBreakMinutes,
-        }}
-      >
-        <Timer />
-      </SettingsContext.Provider>
-    </main>
+    <SettingsContext.Provider
+      value={{
+        workMinutes,
+        breakMinutes,
+        setWorkMinutes,
+        setBreakMinutes,
+      }}
+    >
+      <Timer />
+    </SettingsContext.Provider>
   );
 };
 

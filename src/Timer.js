@@ -7,7 +7,8 @@ import Restartbutton from "./Restartbutton";
 import SettingsContext from "./SettingsContext";
 import DropDownSettings from "./DropDownSettings";
 import ring from "../src/bell2.mp3";
-import { TiTickOutline } from "react-icons/ti"
+import { TiTickOutline } from "react-icons/ti";
+
 
 const red = "#f54e4e";
 const green = "#009b4d";
@@ -31,7 +32,6 @@ function Timer() {
   };
 
   function tick() {
-
     if (secondsLeftRef.current === 0) {
       if (modeRef.current === "work") {
         setShowPopup(true);
@@ -40,7 +40,7 @@ function Timer() {
       }
       console.log("Tick stopped after time is out");
       return;
-    } 
+    }
 
     secondsLeftRef.current--;
     setSecondsLeft(secondsLeftRef.current);
@@ -62,7 +62,6 @@ function Timer() {
   }
 
   useEffect(() => {
-    
     secondsLeftRef.current = settingsInfo.workMinutes * 60;
     setSecondsLeft(secondsLeftRef.current);
 
@@ -114,11 +113,10 @@ function Timer() {
     if (userAnswer.toLocaleLowerCase() === "yes") {
       switchMode();
     } else {
-      restartTimer()
+      restartTimer();
     }
     setShowPopup(false);
     setUserAnswer("");
-    
   }
 
   return (
@@ -136,46 +134,47 @@ function Timer() {
           })}
         />
       </div>
-      {showPopup && mode === "work" && ( // Render the popup message
-        <div className="popup">
-          <div className="popup-message">
-          <p>Time's up! Ready for a break?</p>
-          </div>
+      {showPopup &&
+        mode === "work" && ( // Render the popup message
+          <div className="popup">
+            <div className="popup-message">
+              <p>Time's up! Ready for a break?</p>
+            </div>
 
-          <div className="popup-input">
-          <input
-            type="text"
-            value={userAnswer}
-            onChange={(e) => setUserAnswer(e.target.value)}
-            placeholder="Type 'Yes' to switch to break!"
-          />
-          <button onClick={handleAnswerSubmit} className="input-button">
-            <i>
-              <TiTickOutline className="save-input-button"/>
-            </i>
-          </button>
+            <div className="popup-input">
+              <input
+                type="text"
+                value={userAnswer}
+                onChange={(e) => setUserAnswer(e.target.value)}
+                placeholder="Type 'Yes' to switch to break!"
+              />
+              <button onClick={handleAnswerSubmit} className="input-button">
+                <i>
+                  <TiTickOutline className="save-input-button" />
+                </i>
+              </button>
+            </div>
           </div>
-        </div>
-      )}
-        <div className="nav">
-          {isPaused ? (
-            <Playbutton
-              onClick={() => {
-                console.log("Play button clicked");
-                setIsPaused(false);
-              }}
-            />
-          ) : (
-            <Pausebutton
-              onClick={() => {
-                console.log("Pause button clicked");
-                setIsPaused(true);
-              }}
-            />
-          )}
-          <Restartbutton onRestart={restartTimer} />
-          <DropDownSettings />
-        </div>
+        )}
+      <div className="nav">
+        {isPaused ? (
+          <Playbutton
+            onClick={() => {
+              console.log("Play button clicked");
+              setIsPaused(false);
+            }}
+          />
+        ) : (
+          <Pausebutton
+            onClick={() => {
+              console.log("Pause button clicked");
+              setIsPaused(true);
+            }}
+          />
+        )}
+        <Restartbutton onRestart={restartTimer} />
+        <DropDownSettings />
+      </div>
     </div>
   );
 }

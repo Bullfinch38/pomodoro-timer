@@ -1,14 +1,19 @@
 body {
+  position: relative;
   background: #30384b;
   color: #eee;
   margin: 1rem;
-  font-family: 'Poppins', sans-serif;
+  padding-bottom: 1rem;
 }
 
 .container {
   padding-top: 1rem;
-  max-width: 300px;
+  max-width: 340px;
   margin: 0 auto;
+}
+
+.timer-container {
+  position: relative;
 }
 
 .nav {
@@ -21,8 +26,9 @@ body {
   backdrop-filter: blur(15px);
   transition: all 2s ease;
   margin-top: 1rem;
-  max-width: 250px;
+  max-width: 340px;
   justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .nav:hover {
@@ -43,7 +49,22 @@ body {
   align-items: center;
 }
 
-.btn:hover {
+.btn-cog {
+  color: white;
+  display: flex;
+  padding: 1rem 1rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 2s ease;
+  background: transparent;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn:hover,
+.btn-cog:hover {
   background: #009b4d;
   border-color: transparent;
   transform: rotate(2turn);
@@ -68,27 +89,24 @@ body {
 }
 
 .pomodoro-button:hover {
-  color: #f54e4e; 
+  color: #f54e4e;
 }
 
 .popup-container-full {
-  position: fixed;
+  position: absolute;
   top: 100%;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-  max-height: calc(100vh - 2rem);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 3rem;
 }
 
 .popup-container {
-  padding: 0.5rem 0.5rem;
+  padding: 0.5rem;
   background-color: rgba(0, 0, 0, 0.3);
-  width: 100%;
   border-radius: 3rem;
-  position: relative;
-  margin-bottom: 1rem;
 }
 
 .popup-content {
@@ -101,15 +119,6 @@ body {
 .popup-content > h3 {
   margin: 0 auto;
   margin-bottom: 1rem;
-}
-
-.btn,
-.cog-button,
-.pomodoro-button,
-.pause-button,
-.back-button,
-.save-button {
-  margin-bottom: 0;
 }
 
 .popup {
@@ -136,7 +145,7 @@ body {
 
 .popup-input > input {
   align-self: center;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   width: 100%;
   border: 0;
   border-bottom: 2px solid gray;
@@ -189,21 +198,24 @@ body {
   transform: rotate(2turn);
 }
 
-/* == Media Queries (Medium Devices) == */
-@media screen and (max-width: 1024px) {
-  .container {
-    width: 50%;
-  }
-  
-  .nav {
-    width: 50%;
-  }
+.pomodoro-instructions > ul {
+  list-style-type: disc;
+  color: #ffffff;
 }
 
-/* == Media Queries (Small Devices) == */
-@media screen and (max-width: 600px) {
-  .container {
-    max-width: 480px;
-  }
+.footer {
+  margin: 0.5rem 0.5rem;
 }
 
+.footer__socials {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer__socials > a {
+  font-size: 20px;
+  color: #eee;
+}

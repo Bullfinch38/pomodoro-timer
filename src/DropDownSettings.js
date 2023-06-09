@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { BiCog } from "react-icons/bi";
 import { TiTickOutline } from "react-icons/ti";
 import SettingsContext from "./SettingsContext";
+import Footer from "./Footer";
 
 function PomodoroTimer() {
   const [showSettings, setShowSettings] = useState(false);
@@ -18,7 +19,7 @@ function PomodoroTimer() {
 
   return (
     <div>
-      <button className="btn" onClick={handleToggleSettings}>
+      <button className="btn-cog" onClick={handleToggleSettings}>
         {showSettings ? "" : ""}
         <i>
           <BiCog className="cog-button" />
@@ -51,11 +52,12 @@ function PomodoroTimer() {
                   settingsInfo.setBreakMinutes(event.target.value)
                 }
               />
-              <button className='btn' onClick={handleSaveSettings}>
+              <button className="btn" onClick={handleSaveSettings}>
                 <i>
-                  <TiTickOutline className="save-button"/>
+                  <TiTickOutline className="save-button" />
                 </i>
               </button>
+              <Footer />
             </div>
           </div>
         </div>
